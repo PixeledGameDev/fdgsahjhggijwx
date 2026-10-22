@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TINOS GAMES • Games Hub</title>
+
+<style>
+:root{
+  --bg:#05070b;
+  --panel:#0b0f1a;
+  --ink:#e7ecff;
+  --muted:#8b93c7;
+  --neon:#6cf2ff;
+  --accent:#7a6cff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 70% -10%, rgba(122,108,255,.18), transparent 60%),
+    radial-gradient(900px 500px at 10% 10%, rgba(108,242,255,.18), transparent 55%),
+    linear-gradient(180deg,#02030a,#05070b 40%,#02030a);
+}
+
+.stars,.stars:after{
+  position:fixed; inset:0; content:""; pointer-events:none;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent 40%),
+    radial-gradient(1px 1px at 80px 120px,#cfe7ff,transparent 40%),
+    radial-gradient(1.5px 1.5px at 140px 90px,#fff,transparent 40%);
+  animation:drift 160s linear infinite;
+  opacity:.5;
+}
+.stars:after{animation-duration:240s;opacity:.3}
+@keyframes drift{to{transform:translateY(-1000px)}}
+
+header{
+  position:sticky;top:0;z-index:10;
+  backdrop-filter:blur(8px);
+  background:linear-gradient(180deg,rgba(5,7,11,.85),rgba(5,7,11,.2));
+  border-bottom:1px solid rgba(108,242,255,.15);
+}
+
+.ascii-link{
+  display:block;
+  padding:26px 10px;
+  text-align:center;
+  font-family:"Courier New",monospace;
+  font-size:clamp(.55rem,.9vw,.85rem);
+  line-height:1.15;
+  color:#cfe9ff;
+  white-space:pre;
+  text-shadow:0 0 6px rgba(108,242,255,.6),0 0 18px rgba(108,242,255,.35);
+  text-decoration:none;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--ink)}
+
+.hero{
+  max-width:1200px;
+  margin:50px auto 20px;
+  padding:20px;
+}
+h1{margin:0 0 10px;font-size:clamp(32px,4vw,52px)}
+p{color:var(--muted)}
+
+.grid{
+  max-width:1200px;
+  margin:30px auto 80px;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+}
+.game{
+  background:linear-gradient(180deg,rgba(11,15,26,.85),rgba(11,15,26,.6));
+  border:1px solid rgba(122,108,255,.2);
+  border-radius:14px;
+  padding:16px;
+  text-decoration:none;
+  color:inherit;
+  transition:.2s;
+}
+.game:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 30px rgba(108,242,255,.25);
+}
+.game h3{margin:0 0 6px;font-size:1rem}
+.meta{font-size:.85rem;color:var(--muted)}
+
+footer{
+  border-top:1px solid rgba(122,108,255,.18);
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<header>
+<a href="index.html" class="ascii-link">
+___________.___ _______   ________    _________   ________    _____      _____  ___________ _________
+\__    ___/|   |\      \  \_____  \  /   _____/  /  _____/   /  _  \    /     \ \_   _____//   _____/
+  |    |   |   |/   |   \  /   |   \ \_____  \  /   \  ___  /  /_\  \  /  \ /  \ |    __)_ \_____  \
+  |    |   |   /    |    \/    |    \/        \ \    \_\  \/    |    \/    Y    \|        \/        \
+  |____|   |___\____|__  /\_______  /_______  /  \______  /\____|__  /\____|__  /_______  /_______  /
+                       \/         \/        \/          \/         \/         \/        \/        \/
+</a>
+
+<div class="nav">
+<strong>TINOS GAMES</strong>
+<div>
+<a href="index.html">Home</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<h1>All Your Games, One Hub</h1>
+<p>Click any title to jump straight into the action.</p>
+</section>
+
+<section id="games" class="grid">
+<a class="game" href="https://tinosgames.github.io/1v1.lol" target="_blank"><h3>1v1.LOL</h3><div class="meta">Shooter</div></a>
+<a class="game" href="https://example.com/2048" target="_blank"><h3>2048</h3><div class="meta">Puzzle</div></a>
+<a class="game" href="https://example.com/amongus" target="_blank"><h3>Among Us</h3><div class="meta">Party</div></a>
+<a class="game" href="https://tinosgames.github.io/basketrandom" target="_blank"><h3>Basket Random</h3><div class="meta">Sports</div></a>
+<a class="game" href="https://tinosgames.github.io/bitlife" target="_blank"><h3>BitLife</h3><div class="meta">Simulation</div></a>
+<a class="game" href="https://tinosgames.github.io/blockblast" target="_blank"><h3>Block Blast</h3><div class="meta">Puzzle</div></a>
+<a class="game" href="https://tinosgames.github.io/bottle" target="_blank"><h3>Bottle Flip 3D</h3><div class="meta">Arcade</div></a>
+<a class="game" href="https://tinosgames.github.io/bobrobber4.html" target="_blank"><h3>Bob The Robber 4</h3><div class="meta">Stealth</div></a>
+<a class="game" href="https://tinosgames.github.io/brawl-stars-project-laser" target="_blank"><h3>Brawl Stars Laser</h3><div class="meta">Action</div></a>
+<a class="game" href="https://tinosgames.github.io/boxingrandom" target="_blank"><h3>Boxing Random</h3><div class="meta">Sports</div></a>
+<a class="game" href="https://tinosgames.github.io/chromedino" target="_blank"><h3>Chrome Dino</h3><div class="meta">Endless</div></a>
+<a class="game" href="https://tinosgames.github.io/cookieclicker" target="_blank"><h3>Cookie Clicker</h3><div class="meta">Idle</div></a>
+<a class="game" href="https://tinosgames.github.io/crossy-road" target="_blank"><h3>Crossy Road</h3><div class="meta">Arcade</div></a>
+<a class="game" href="https://tinosgames.github.io/drive-mad" target="_blank"><h3>Drive Mad</h3><div class="meta">Driving</div></a>
+<a class="game" href="https://tinosgames.github.io/diddydinos" target="_blank"><h3>Diddy Dinos</h3><div class="meta">Arcade</div></a>
+<a class="game" href="https://tinosgames.github.io/drift-boss" target="_blank"><h3>Drift Boss</h3><div class="meta">Driving</div></a>
+<a class="game" href="https://tinosgames.github.io/doodle-jump" target="_blank"><h3>Doodle Jump</h3><div class="meta">Platformer</div></a>
+<a class="game" href="https://tinosgames.github.io/eggycar" target="_blank"><h3>Eggy Car</h3><div class="meta">Driving</div></a>
+<a class="game" href="https://tinosgames.github.io/flappybird" target="_blank"><h3>Flappy Bird</h3><div class="meta">Arcade</div></a>
+<a class="game" href="https://tinosgames.github.io/fnaf-1" target="_blank"><h3>FNAF 1</h3><div class="meta">Horror</div></a>
+<a class="game" href="https://tinosgames.github.io/eaglercraft" target="_blank"><h3>Minecraft</h3><div class="meta">Sandbox</div></a>
+<a class="game" href="https://tinosgames.github.io/mrbullet.html" target="_blank"><h3>Mr Bullet</h3><div class="meta">Shooter</div></a>
+<a class="game" href="https://tinosgames.github.io/gdlite" target="_blank"><h3>Geometry Dash</h3><div class="meta">Rhythm</div></a>
+<a class="game" href="https://tinosgames.github.io/google-feud" target="_blank"><h3>Google Feud</h3><div class="meta">Trivia</div></a>
+<a class="game" href="https://tinosgames.github.io/hackertype" target="_blank"><h3>Hacker Type</h3><div class="meta">Typing</div></a>
+<a class="game" href="https://tinosgames.github.io/motox3m2" target="_blank"><h3>Moto X3M 2</h3><div class="meta">Racing</div></a>
+<a class="game" href="https://tinosgames.github.io/paperio2" target="_blank"><h3>Paper IO 2</h3><div class="meta">Multiplayer</div></a>
+<a class="game" href="https://tinosgames.github.io/pacman" target="_blank"><h3>Pac-Man</h3><div class="meta">Classic</div></a>
+<a class="game" href="https://tinosgames.github.io/paperflight" target="_blank"><h3>Paper Flight</h3><div class="meta">Fun</div></a>
+<a class="game" href="https://tinosgames.github.io/retrobowl" target="_blank"><h3>Retro Bowl</h3><div class="meta">Sports</div></a>
+<a class="game" href="https://tinosgames.github.io/mario-game" target="_blank"><h3>Mario Game</h3><div class="meta">Platformer</div></a>
+<a class="game" href="https://tinosgames.github.io/slope1.html" target="_blank"><h3>Slope</h3><div class="meta">Endless</div></a>
+<a class="game" href="https://tinosgames.github.io/snake" target="_blank"><h3>Snake</h3><div class="meta">Classic</div></a>
+<a class="game" href="https://tinosgames.github.io/snowrider3d" target="_blank"><h3>Snow Rider 3D</h3><div class="meta">Sports</div></a>
+<a class="game" href="https://tinosgames.github.io/stack" target="_blank"><h3>Stack</h3><div class="meta">Arcade</div></a>
+<a class="game" href="https://tinosgames.github.io/stickman-hook" target="_blank"><h3>Stickman Hook</h3><div class="meta">Arcade</div></a>
+<a class="game" href="https://tinosgames.github.io/spacewave" target="_blank"><h3>Space Wave</h3><div class="meta">Adventure</div></a>
+<a class="game" href="https://tinosgames.github.io/subway-surfers" target="_blank"><h3>Subway Surfers</h3><div class="meta">Runner</div></a>
+<a class="game" href="https://tinosgames.github.io/tunnelrush" target="_blank"><h3>Tunnel Rush</h3><div class="meta">Reflex</div></a>
+<a class="game" href="https://tinosgames.github.io/temple-run-2" target="_blank"><h3>Temple Run</h3><div class="meta">Runner</div></a>
+<a class="game" href="https://tinosgames.github.io/tombofthemask" target="_blank"><h3>Tomb Of The Mask</h3><div class="meta">Runner</div></a>
+<a class="game" href="https://tinosgames.github.io/taptapshots" target="_blank"><h3>Tap Tap Shots</h3><div class="meta">Sports</div></a>
+<a class="game" href="https://tinosgames.github.io/volleyrandom" target="_blank"><h3>Volley Random</h3><div class="meta">Sports</div></a>
+</section>
+
+<footer>
+© 2026 TINOS GAMES • Built in the dark
+</footer>
+
+</body>
+</html>

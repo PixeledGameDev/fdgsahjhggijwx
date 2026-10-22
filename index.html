@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TINOS GAMES • Space Noir</title>
+
+<style>
+:root{
+  --bg:#05070b;
+  --panel:#0b0f1a;
+  --ink:#e7ecff;
+  --muted:#8b93c7;
+  --neon:#6cf2ff;
+  --accent:#7a6cff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 70% -10%, rgba(122,108,255,.18), transparent 60%),
+    radial-gradient(900px 500px at 10% 10%, rgba(108,242,255,.18), transparent 55%),
+    linear-gradient(180deg,#02030a,#05070b 40%,#02030a);
+}
+
+.stars,.stars:after{
+  position:fixed; inset:0; content:""; pointer-events:none;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent 40%),
+    radial-gradient(1px 1px at 80px 120px,#cfe7ff,transparent 40%),
+    radial-gradient(1.5px 1.5px at 140px 90px,#fff,transparent 40%);
+  animation:drift 160s linear infinite;
+  opacity:.5;
+}
+.stars:after{animation-duration:240s;opacity:.3}
+@keyframes drift{to{transform:translateY(-1000px)}}
+
+header{
+  position:sticky;top:0;z-index:10;
+  backdrop-filter:blur(8px);
+  background:linear-gradient(180deg,rgba(5,7,11,.85),rgba(5,7,11,.2));
+  border-bottom:1px solid rgba(108,242,255,.15);
+}
+
+.ascii{
+  padding:26px 10px;
+  text-align:center;
+  font-family:"Courier New",monospace;
+  font-size:clamp(.55rem,.9vw,.85rem);
+  line-height:1.15;
+  color:#cfe9ff;
+  white-space:pre;
+  text-shadow:0 0 6px rgba(108,242,255,.6),0 0 18px rgba(108,242,255,.35);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:var(--ink)}
+
+.hero{
+  max-width:1200px;
+  margin:50px auto 50px;
+  padding:20px;
+  text-align:center;
+}
+h1{margin:0 0 10px;font-size:clamp(32px,4vw,52px)}
+p{color:var(--muted)}
+
+.cta-button{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 28px;
+  font-size:1.1rem;
+  font-weight:bold;
+  color:var(--ink);
+  background:var(--neon);
+  border:none;
+  border-radius:8px;
+  text-decoration:none;
+  box-shadow:0 0 15px rgba(108,242,255,.4);
+  transition:transform .2s, box-shadow .2s;
+}
+.cta-button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px rgba(108,242,255,.7);
+}
+
+.changelog-section{
+  max-width:800px;
+  margin:40px auto;
+  padding:20px;
+  background:rgba(11,15,26,.85);
+  border:1px solid rgba(122,108,255,.2);
+  border-radius:12px;
+}
+.changelog-section h2{
+  margin-top:0;
+  color:var(--neon);
+}
+.changelog-section ul{
+  list-style:none;
+  padding-left:0;
+}
+.changelog-section li{
+  margin-bottom:8px;
+  color:var(--muted);
+}
+
+footer{
+  border-top:1px solid rgba(122,108,255,.18);
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<header>
+<pre class="ascii">
+ _______ .___ _______   ________    _________   ________    _____      _____  ___________ _________
+ \__    \|   |\      \  \_____  \  /   _____/  /  _____/   /  _  \    /     \ \_   _____//   _____/
+   |    | |   |/   |   \  /   |   \ \_____  \  /   \  ___  /  /_\  \  /  \ /  \ |    __)_ \_____  \
+   |    | |   /    |    \/    |    \/        \ \    \_\  \/    |    \/    Y    \|        \/        \
+   |____| |___\____|__  /\_______  /_______  /  \______  /\____|__  /\____|__  /_______  /_______  /
+                        \/         \/        \/          \/         \/         \/        \/        \/
+</pre>
+
+<div class="nav">
+<strong>TINOS GAMES</strong>
+<div>
+<a href="https://tinosgames.github.io/games.html">Play Games</a>
+<a href="#changelog">Changelog</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<h1>Cold Space. Hot Games.</h1>
+<p>Click the button below to enter the full Tino's Games hub.</p>
+<a class="cta-button" href="https://tinosgames.github.io/games.html">Enter Games Hub</a>
+</section>
+
+<section id="changelog" class="changelog-section">
+<h2>Changelog</h2>
+<ul>
+<li>• 2026-01-10: Added new arcade games and improved server speed.</li>
+<li>• 2026-01-05: Fixed bugs in multiplayer games.</li>
+<li>• 2026-01-01: Updated layout to Space Noir theme.</li>
+<li>• 2025-12-25: Holiday event with exclusive games.</li>
+</ul>
+</section>
+
+<footer>
+© 2026 TINOS GAMES • Built in the dark
+</footer>
+
+</body>
+</html>

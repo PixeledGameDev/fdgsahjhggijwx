@@ -1,0 +1,186 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #2c003e, #000); /* Purple and black gradient background */
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #a855f7; /* Purple hover color */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: url('background.png') no-repeat center center/cover; /* Background image */
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-description {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+/* Search Section */
+.search-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.search-bar {
+    padding: 0.8rem;
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid #a855f7; /* Purple border */
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Games Section */
+.games-section {
+    padding: 2rem 1rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid layout */
+    gap: 1.5rem; /* Space between grid items */
+    padding: 0 1rem; /* Add padding to the grid */
+}
+
+.game-card {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background for cards */
+    border: 2px solid #a855f7; /* Purple border */
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+}
+
+.game-card:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.5); /* Purple shadow */
+}
+
+.game-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.game-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #a855f7; /* Purple font color */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Scroll-to-Top Button */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #a855f7; /* Purple button */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#scroll-to-top:hover {
+    background-color: #9333ea; /* Darker purple on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .game-card {
+        padding: 0.8rem;
+    }
+
+    .game-title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .game-title {
+        font-size: 0.8rem;
+    }
+}

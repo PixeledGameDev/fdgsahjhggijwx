@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <title>1v1.LOL – Tinos Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Original styles/scripts still load -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #050505, #0b1c3d);
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* ===== Layout ===== */
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      height: 100vh;
+      gap: 16px;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    /* ===== Game Board ===== */
+    .game-board {
+      background: #000;
+      border: 3px solid #1e90ff;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .game-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: #0a1225;
+      border-bottom: 2px solid #1e90ff;
+    }
+
+    .game-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .game-actions button {
+      background: #1e90ff;
+      border: none;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .game-actions button:hover {
+      background: #63b3ff;
+    }
+
+    /* Unity container */
+    #gameContainer {
+      flex: 1;
+      background: #000;
+    }
+
+    /* ===== Sidebar ===== */
+    .sidebar {
+      background: #0a1225;
+      border: 3px solid #1e90ff;
+      border-radius: 14px;
+      padding: 14px;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      text-align: center;
+      font-size: 18px;
+      border-bottom: 2px solid #1e90ff;
+      padding-bottom: 8px;
+    }
+
+    .game-link {
+      display: block;
+      background: #111c3a;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .game-link:hover {
+      background: #1e90ff;
+    }
+
+    /* Loader fix */
+    #loader {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- ===== GAME BOARD ===== -->
+  <div class="game-board" id="gameBoard">
+    <div class="game-header">
+      <div class="game-title">1v1.LOL</div>
+      <div class="game-actions">
+        <button onclick="goFullscreen()">Fullscreen</button>
+      </div>
+    </div>
+
+    <div id="gameContainer"></div>
+
+    <div id="loader">
+      <span>Loading…</span>
+    </div>
+  </div>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <h2>More Games</h2>
+
+    <!-- Replace links later -->
+    <a class="game-link" href="/games/geometry-dash.html">Geometry Dash</a>
+    <a class="game-link" href="/games/minecraft.html">Minecraft</a>
+    <a class="game-link" href="/games/slope.html">Slope</a>
+    <a class="game-link" href="/games/bitlife.html">BitLife</a>
+
+  </aside>
+
+</div>
+
+<!-- ===== UNITY ===== -->
+<script src="UnityLoader.js"></script>
+<script>
+  var gameJsonUrl = "https://justbuild.nyc3.cdn.digitaloceanspaces.com/CI/1v1/Prod/162/WebGL.json";
+
+  var gameInstance = UnityLoader.instantiate(
+    "gameContainer",
+    gameJsonUrl,
+    {
+      onProgress: function (gameInstance, progress) {
+        if (progress === 1) {
+          document.getElementById("loader").style.display = "none";
+        }
+      }
+    }
+  );
+
+  window.unityInstance = gameInstance;
+
+  /* ===== Fullscreen ===== */
+  function goFullscreen() {
+    const el = document.getElementById("gameBoard");
+    if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    else if (el.msRequestFullscreen) el.msRequestFullscreen();
+  }
+</script>
+
+</body>
+</html>
